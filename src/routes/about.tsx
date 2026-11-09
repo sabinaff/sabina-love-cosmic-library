@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CosmicBackdrop } from "@/components/site/CosmicBackdrop";
 import { Globe } from "@/components/site/Globe";
 import { Reveal } from "@/components/site/Reveal";
-import portrait from "@/assets/author-portrait.jpg";
+import portrait from "@/assets/sabina-author.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -60,12 +60,13 @@ function AboutPage() {
             <div className="absolute -right-5 -bottom-5 h-full w-full border border-gold/30" />
             <img
               src={portrait}
-              alt="Sabina Love in soft golden light"
-              width={1024}
-              height={1280}
+              alt="Portrait of author Sabina Love smiling in warm golden light"
+              width={960}
+              height={1296}
               loading="lazy"
-              className="relative aspect-[4/5] w-full object-cover shadow-book"
+              className="relative aspect-[4/5] w-full object-cover object-[50%_25%] shadow-book"
             />
+            <div className="pointer-events-none absolute inset-0 portrait-blend" />
           </Reveal>
 
           <div className="space-y-14">

@@ -5,7 +5,7 @@ import { Globe } from "@/components/site/Globe";
 import { Reveal } from "@/components/site/Reveal";
 import { BookCard } from "@/components/site/BookCard";
 import { books } from "@/lib/books";
-import portrait from "@/assets/author-portrait.jpg";
+import portrait from "@/assets/sabina-author.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,12 +108,13 @@ function AboutHeart() {
           <div className="absolute -top-5 -left-5 h-full w-full border border-gold/30" />
           <img
             src={portrait}
-            alt="Portrait of Sabina Love in soft golden light"
-            width={1024}
-            height={1280}
+            alt="Portrait of author Sabina Love smiling in warm golden light"
+            width={960}
+            height={1296}
             loading="lazy"
-            className="relative aspect-[4/5] w-full object-cover shadow-book"
+            className="relative aspect-[4/5] w-full object-cover object-[50%_25%] shadow-book"
           />
+          <div className="pointer-events-none absolute inset-0 portrait-blend" />
         </Reveal>
 
         <Reveal delay={150} className="text-center md:text-left">
