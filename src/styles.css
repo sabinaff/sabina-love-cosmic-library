@@ -66,8 +66,8 @@
   --radius: 0.25rem;
 
   /* Core palette */
-  --ink: oklch(0.13 0.012 265);
-  --cosmos: oklch(0.17 0.04 262);
+  --ink: oklch(0.27 0.09 250);
+  --cosmos: oklch(0.36 0.11 240);
   --cream: oklch(0.95 0.02 85);
   --gold: oklch(0.8 0.105 80);
   --gold-soft: oklch(0.88 0.07 85);
@@ -76,16 +76,16 @@
 
   --background: var(--ink);
   --foreground: var(--cream);
-  --card: oklch(0.16 0.012 265);
+  --card: oklch(0.32 0.1 245);
   --card-foreground: var(--cream);
-  --popover: oklch(0.16 0.012 265);
+  --popover: oklch(0.32 0.1 245);
   --popover-foreground: var(--cream);
   --primary: var(--gold);
   --primary-foreground: oklch(0.15 0.01 265);
-  --secondary: oklch(0.2 0.015 265);
+  --secondary: oklch(0.4 0.11 238);
   --secondary-foreground: var(--cream);
-  --muted: oklch(0.2 0.015 265);
-  --muted-foreground: oklch(0.74 0.02 80);
+  --muted: oklch(0.4 0.11 238);
+  --muted-foreground: oklch(0.88 0.03 220);
   --accent: oklch(0.24 0.03 75);
   --accent-foreground: var(--gold-soft);
   --destructive: oklch(0.65 0.19 25);
@@ -97,7 +97,7 @@
   /* Gradients, glows, shadows */
   --gradient-gold: linear-gradient(120deg, var(--gold-deep), var(--gold) 45%, var(--gold-soft) 70%, var(--gold));
   --gradient-hairline: linear-gradient(90deg, transparent, var(--gold), transparent);
-  --gradient-night: radial-gradient(ellipse at 70% 40%, oklch(0.2 0.05 258) 0%, var(--ink) 60%);
+  --gradient-night: radial-gradient(ellipse at 70% 40%, oklch(0.62 0.13 230) 0%, var(--cosmos) 35%, var(--ink) 75%);
   --glow-earth: radial-gradient(circle closest-side at center, oklch(0.62 0.15 250 / 0.4) 0%, oklch(0.62 0.15 250 / 0.35) 62%, oklch(0.5 0.12 255 / 0.14) 80%, transparent 100%);
   --glow-gold: radial-gradient(circle closest-side at center, oklch(0.8 0.105 80 / 0.2) 0%, oklch(0.8 0.105 80 / 0.08) 60%, transparent 100%);
   --shadow-gold: 0 20px 60px -20px oklch(0.8 0.105 80 / 0.35);
