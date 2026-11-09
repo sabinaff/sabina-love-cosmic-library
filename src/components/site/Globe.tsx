@@ -4,8 +4,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Photoreal Earth with atmospheric glow, gentle float and scroll parallax.
- * The photo sits on pure black and the wrapper blends with `screen`, so only the planet shows.
- * The blend must stay on the outermost element: inner transforms create their own stacking context.
+ * The photo sits on black; a circular mask (globe-mask) cuts out just the planet and its rim.
  */
 export function Globe({
   className,
@@ -40,7 +39,7 @@ export function Globe({
   }, [parallax]);
 
   return (
-    <div aria-hidden className={cn("pointer-events-none select-none mix-blend-screen", className)}>
+    <div aria-hidden className={cn("pointer-events-none select-none", className)}>
       <div ref={ref} className="relative h-full w-full will-change-transform">
         <div className="relative h-full w-full animate-float">
           {/* luminous halo behind the planet */}
@@ -53,7 +52,7 @@ export function Globe({
             height={1536}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
-            className={cn("relative h-full w-full object-contain", imgClassName)}
+            className={cn("relative h-full w-full object-contain globe-mask", imgClassName)}
           />
         </div>
       </div>

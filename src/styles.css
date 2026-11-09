@@ -203,6 +203,12 @@
   background: var(--glow-gold);
 }
 
+/* Cuts the Earth photo to its sphere + atmosphere rim (sphere ≈ 91% of the square) */
+@utility globe-mask {
+  -webkit-mask-image: radial-gradient(circle closest-side at 50% 49.6%, #000 90.5%, transparent 94%);
+  mask-image: radial-gradient(circle closest-side at 50% 49.6%, #000 90.5%, transparent 94%);
+}
+
 @utility shadow-gold {
   box-shadow: var(--shadow-gold);
 }
