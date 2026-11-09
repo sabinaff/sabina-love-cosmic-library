@@ -58,7 +58,7 @@ function Hero() {
       />
 
       {/* Fade the globe under the nav and into the next section */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-ink/60 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-start px-6 pt-36 pb-[70vw] md:px-10 lg:items-center lg:py-32">
@@ -186,7 +186,7 @@ function FeaturedQuote() {
 
 function BeginJourney() {
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-[52vw] md:pt-40 md:pb-[340px]">
+    <section className="relative isolate overflow-hidden border-t border-border pt-32 pb-[52vw] md:pt-40 md:pb-[340px]">
       <SkyBackdrop side="center" className="-z-10" />
       {/* Globe horizon rising from below, kept under the text area */}
       <Globe

@@ -27,8 +27,8 @@ export function SkyBackdrop({
       />
       {side === "left" ? (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/45 to-transparent lg:hidden" />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/80 via-ink/45 to-transparent lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/65 via-ink/35 to-transparent lg:hidden" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/65 via-ink/30 to-transparent lg:block" />
         </>
       ) : (
         <div className="absolute inset-0 sky-center-wash" />
