@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { CosmicBackdrop } from "@/components/site/CosmicBackdrop";
+import { SkyBackdrop } from "@/components/site/SkyBackdrop";
 import { Globe } from "@/components/site/Globe";
 import { Reveal } from "@/components/site/Reveal";
 import { BookCard } from "@/components/site/BookCard";
@@ -43,7 +43,7 @@ function Index() {
 function Hero() {
   return (
     <section className="relative isolate flex min-h-svh overflow-hidden">
-      <CosmicBackdrop />
+      <SkyBackdrop priority />
 
       {/* Desktop: massive globe on the right, bleeding off the edge, clear of the text column */}
       <Globe
@@ -58,15 +58,13 @@ function Hero() {
       />
 
       {/* Fade the globe under the nav and into the next section */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-ink/60 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-start px-6 pt-36 pb-[70vw] md:px-10 lg:items-center lg:py-32">
         <div className="mx-auto flex w-full max-w-xl flex-col items-center text-center lg:mx-0 lg:w-[44%]">
-          <span className="eyebrow animate-rise">Digital Books for the Awakening Soul</span>
-
           <h1
-            className="mt-8 animate-rise font-display text-[clamp(3.6rem,9vw,8rem)] leading-[0.9] font-medium tracking-[0.08em] text-cream uppercase [animation-delay:150ms]"
+            className="animate-rise text-glow font-display text-[clamp(3.6rem,9vw,8rem)] leading-[0.9] font-medium tracking-[0.08em] text-cream uppercase [animation-delay:150ms]"
           >
             Sabina
             <br />
@@ -75,11 +73,11 @@ function Hero() {
 
           <div className="mt-10 hairline w-32 animate-rise [animation-delay:300ms]" />
 
-          <blockquote className="mt-10 max-w-md animate-rise font-display text-xl leading-relaxed font-light text-cream/85 italic md:text-2xl [animation-delay:450ms]">
+          <blockquote className="mt-10 max-w-md animate-rise font-display text-xl leading-relaxed font-light text-cream text-glow italic md:text-2xl [animation-delay:450ms]">
             “We are not here to find the light. We are here to remember that we are it.”
           </blockquote>
 
-          <p className="mt-6 animate-rise text-[0.65rem] tracking-[0.22em] text-muted-foreground uppercase md:text-xs md:tracking-[0.3em] [animation-delay:600ms]">
+          <p className="mt-6 animate-rise text-glow text-[0.65rem] tracking-[0.22em] text-cream/90 uppercase md:text-xs md:tracking-[0.3em] [animation-delay:600ms]">
             Books of love · light · consciousness
           </p>
 
@@ -172,10 +170,10 @@ function FeaturedBooks() {
 function FeaturedQuote() {
   return (
     <section className="relative isolate overflow-hidden py-32 md:py-48">
-      <CosmicBackdrop intensity="subtle" />
+      <SkyBackdrop side="center" />
       <Reveal className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
         <span className="font-display text-7xl leading-none text-gold/70">“</span>
-        <p className="mt-2 font-display text-3xl leading-snug font-light text-cream italic md:text-5xl md:leading-tight">
+        <p className="mt-2 font-display text-3xl leading-snug font-light text-cream text-glow italic md:text-5xl md:leading-tight">
           Love is the oldest light in the universe. It travelled through every star to find its way
           into your heart.
         </p>
@@ -188,9 +186,8 @@ function FeaturedQuote() {
 
 function BeginJourney() {
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-[52vw] md:pt-40 md:pb-[340px]">
-      <div className="absolute inset-0 -z-10 bg-night" />
-      <div className="absolute inset-0 -z-10 starfield-far opacity-70" />
+    <section className="relative isolate overflow-hidden border-t border-border pt-32 pb-[52vw] md:pt-40 md:pb-[340px]">
+      <SkyBackdrop side="center" className="-z-10" />
       {/* Globe horizon rising from below, kept under the text area */}
       <Globe
         parallax={0}
@@ -198,8 +195,8 @@ function BeginJourney() {
       />
       <Reveal className="relative mx-auto max-w-2xl px-6 text-center">
         <span className="eyebrow">An Invitation</span>
-        <h2 className="mt-6 text-5xl text-cream md:text-6xl">Begin Your Journey</h2>
-        <p className="mx-auto mt-8 max-w-lg leading-relaxed text-cream/70">
+        <h2 className="mt-6 text-5xl text-cream text-glow md:text-6xl">Begin Your Journey</h2>
+        <p className="mx-auto mt-8 max-w-lg leading-relaxed text-cream text-glow">
           Step into a library of light. Choose the book that calls to you, and let it carry you home.
         </p>
         <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
