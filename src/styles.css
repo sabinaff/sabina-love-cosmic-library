@@ -227,6 +227,14 @@
   mask-image: radial-gradient(circle closest-side at 50% 49.6%, #000 90.5%, transparent 94%);
 }
 
+/* Melts a photo into the page: soft blue-gold vignette at the edges */
+@utility portrait-blend {
+  background:
+    radial-gradient(ellipse 85% 80% at 50% 40%, transparent 55%, oklch(0.27 0.09 250 / 0.45) 100%),
+    linear-gradient(to top, oklch(0.27 0.09 250 / 0.35), transparent 30%);
+  box-shadow: inset 0 0 60px oklch(0.8 0.105 80 / 0.18), 0 0 80px -10px oklch(0.8 0.105 80 / 0.3);
+}
+
 @utility shadow-gold {
   box-shadow: var(--shadow-gold);
 }
