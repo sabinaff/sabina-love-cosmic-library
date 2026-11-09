@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Site-wide chrome (header, footer, cosmic backdrop, globe, book cards) lives in `src/components/site/`; book data lives in `src/lib/books.ts` so pages share one source.
