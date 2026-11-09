@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { CosmicBackdrop } from "@/components/site/CosmicBackdrop";
 import { SkyBackdrop } from "@/components/site/SkyBackdrop";
 import { Globe } from "@/components/site/Globe";
 import { Reveal } from "@/components/site/Reveal";
@@ -188,8 +187,7 @@ function FeaturedQuote() {
 function BeginJourney() {
   return (
     <section className="relative isolate overflow-hidden pt-32 pb-[52vw] md:pt-40 md:pb-[340px]">
-      <div className="absolute inset-0 -z-10 bg-night" />
-      <div className="absolute inset-0 -z-10 starfield-far opacity-70" />
+      <SkyBackdrop side="center" className="-z-10" />
       {/* Globe horizon rising from below, kept under the text area */}
       <Globe
         parallax={0}
@@ -197,8 +195,8 @@ function BeginJourney() {
       />
       <Reveal className="relative mx-auto max-w-2xl px-6 text-center">
         <span className="eyebrow">An Invitation</span>
-        <h2 className="mt-6 text-5xl text-cream md:text-6xl">Begin Your Journey</h2>
-        <p className="mx-auto mt-8 max-w-lg leading-relaxed text-cream/70">
+        <h2 className="mt-6 text-5xl text-cream text-glow md:text-6xl">Begin Your Journey</h2>
+        <p className="mx-auto mt-8 max-w-lg leading-relaxed text-cream text-glow">
           Step into a library of light. Choose the book that calls to you, and let it carry you home.
         </p>
         <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
