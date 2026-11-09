@@ -290,24 +290,6 @@
   }
 }
 
-/* Form field look: underline-only, gold on focus */
-@utility field-luxe {
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--input);
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
-  box-shadow: none;
-  color: var(--cream);
-  transition: border-color 0.4s var(--ease-luxe);
-  &:focus-visible {
-    outline: none;
-    box-shadow: none;
-    border-bottom-color: var(--gold);
-  }
-}
-
 @keyframes twinkle {
   0%, 100% { opacity: 0.55; }
   50% { opacity: 1; }

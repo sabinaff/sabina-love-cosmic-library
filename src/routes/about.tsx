@@ -42,6 +42,7 @@ function AboutPage() {
           parallax={0.1}
           className="absolute top-1/2 right-[-30vw] -z-0 hidden aspect-square w-[60vw] max-w-[900px] -translate-y-1/2 opacity-35 blur-[1px] lg:block"
         />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 md:px-10">
           <div className="max-w-2xl text-center lg:text-left">
             <span className="eyebrow animate-rise">About the Author</span>

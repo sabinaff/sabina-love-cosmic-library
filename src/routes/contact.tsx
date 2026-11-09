@@ -37,6 +37,10 @@ const schema = z.object({
   message: z.string().trim().min(1, "Please write a message").max(2000),
 });
 
+const fieldClass =
+  "rounded-none border-0 border-b border-input bg-transparent px-0 text-base text-cream shadow-none transition-colors duration-500 focus-visible:border-gold focus-visible:ring-0";
+const labelClass = "text-[0.68rem] font-normal tracking-[0.36em] text-gold uppercase";
+
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 function ContactPage() {
@@ -136,14 +140,14 @@ function ContactPage() {
                   </div>
                   <Field label="Subject (optional)" name="subject" error={errors.subject} />
                   <div className="space-y-3">
-                    <Label htmlFor="message" className="eyebrow">Message</Label>
+                    <Label htmlFor="message" className={labelClass}>Message</Label>
                     <Textarea
                       id="message"
                       name="message"
                       rows={5}
                       maxLength={2000}
                       aria-invalid={!!errors.message}
-                      className="field-luxe min-h-[140px] resize-none text-base"
+                      className={`${fieldClass} min-h-[140px] resize-none`}
                     />
                     {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
                   </div>
@@ -173,8 +177,8 @@ function Field({
 }) {
   return (
     <div className="space-y-3">
-      <Label htmlFor={name} className="eyebrow">{label}</Label>
-      <Input id={name} name={name} type={type} aria-invalid={!!error} className="field-luxe h-11 text-base" />
+      <Label htmlFor={name} className={labelClass}>{label}</Label>
+      <Input id={name} name={name} type={type} aria-invalid={!!error} className={`${fieldClass} h-11`} />
       {error && <p className="text-sm text-destructive">{error}</p>}
     </div>
   );
