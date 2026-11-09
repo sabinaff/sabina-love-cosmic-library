@@ -48,7 +48,7 @@ function Hero() {
       {/* Desktop: massive globe on the right, bleeding off the edge, clear of the text column */}
       <Globe
         priority
-        className="absolute top-1/2 right-[-24vw] hidden aspect-square w-[72vw] max-w-[1300px] -translate-y-1/2 lg:block"
+        className="absolute top-[56%] right-[-24vw] hidden aspect-square w-[min(72vw,112svh)] max-w-[1300px] -translate-y-1/2 lg:block"
       />
       {/* Mobile/tablet: globe rises as a horizon beneath the text */}
       <Globe
@@ -56,6 +56,10 @@ function Hero() {
         parallax={0.08}
         className="absolute bottom-[-64vw] left-1/2 aspect-square w-[125vw] -translate-x-1/2 lg:hidden"
       />
+
+      {/* Fade the globe under the nav and into the next section */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-start px-6 pt-36 pb-[70vw] md:px-10 lg:items-center lg:py-32">
         <div className="mx-auto flex w-full max-w-xl flex-col items-center text-center lg:mx-0 lg:w-[44%]">
@@ -75,7 +79,7 @@ function Hero() {
             “We are not here to find the light. We are here to remember that we are it.”
           </blockquote>
 
-          <p className="mt-6 animate-rise text-xs tracking-[0.3em] text-muted-foreground uppercase [animation-delay:600ms]">
+          <p className="mt-6 animate-rise text-[0.65rem] tracking-[0.22em] text-muted-foreground uppercase md:text-xs md:tracking-[0.3em] [animation-delay:600ms]">
             Books of love · light · consciousness
           </p>
 
