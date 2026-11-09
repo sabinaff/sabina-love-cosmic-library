@@ -169,7 +169,7 @@ function Field({
   label: string;
   name: string;
   type?: string;
-  error?: string;
+  error?: string | undefined;
 }) {
   return (
     <div className="space-y-3">
