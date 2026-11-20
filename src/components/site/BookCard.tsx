@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { toast } from "sonner";
 import type { Book } from "@/lib/books";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 /** Book with an embossed-style cover: artwork + title set in type over it. */
 export function BookCover({ book, className }: { book: Book; className?: string }) {
@@ -34,6 +37,29 @@ export function BookCover({ book, className }: { book: Book; className?: string 
 }
 
 export function BookCard({ book }: { book: Book }) {
+  const [openingCheckout, setOpeningCheckout] = useState(false);
+
+  async function buy() {
+    setOpeningCheckout(true);
+    try {
+      const res = await fetch("/api/public/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug: book.slug }),
+      });
+      const data = (await res.json()) as { url?: string; error?: string };
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      toast.error(data.error ?? "Checkout is unavailable right now");
+    } catch {
+      toast.error("Checkout is unavailable right now");
+    } finally {
+      setOpeningCheckout(false);
+    }
+  }
+
   return (
     <article className="group flex flex-col">
       <div className="relative">
@@ -55,6 +81,17 @@ export function BookCard({ book }: { book: Book }) {
           <span className="h-3 w-px bg-gold/40" />
           <span className="text-gold">{book.price}</span>
         </div>
+        {book.stripePriceId ? (
+          <Button
+            variant="gold"
+            size="lg"
+            className="mt-6"
+            disabled={openingCheckout}
+            onClick={buy}
+          >
+            {openingCheckout ? "Opening checkout…" : "Buy this book"}
+          </Button>
+        ) : null}
       </div>
     </article>
   );

@@ -30,3 +30,4 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Site-wide chrome (header, footer, cosmic backdrop, globe, book cards) lives in `src/components/site/`; book data lives in `src/lib/books.ts` so pages share one source.
+- Payments use the user's own Stripe account (bring-your-own-key): `src/routes/api/public/create-checkout.ts` creates Checkout sessions, and a book is purchasable only once its `stripePriceId` is set in `src/lib/books.ts`.

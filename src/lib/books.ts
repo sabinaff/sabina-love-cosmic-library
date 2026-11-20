@@ -14,7 +14,15 @@ export type Book = {
   format: string;
   price: string;
   theme: string;
+  /** Stripe price ID (price_…). Set once the real product exists in Stripe. */
+  stripePriceId?: string;
 };
+
+/** A book can be bought only when it has a Stripe price ID. */
+export function getPurchasableBook(slug: string): Book | undefined {
+  const book = books.find((b) => b.slug === slug);
+  return book?.stripePriceId ? book : undefined;
+}
 
 export const books: Book[] = [
   {

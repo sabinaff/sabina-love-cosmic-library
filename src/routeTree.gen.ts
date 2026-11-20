@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CollectionRouteImport } from './routes/collection'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PaymentCanceledRouteImport } from './routes/payment-canceled'
+import { Route as PaymentSuccessRouteImport } from './routes/payment-success'
+import { Route as ApiPublicCreateCheckoutRouteImport } from './routes/api/public/create-checkout'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +37,39 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PaymentCanceledRoute = PaymentCanceledRouteImport.update({
+  id: '/payment-canceled',
+  path: '/payment-canceled',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentSuccessRoute = PaymentSuccessRouteImport.update({
+  id: '/payment-success',
+  path: '/payment-success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicCreateCheckoutRoute = ApiPublicCreateCheckoutRouteImport.update({
+  id: '/api/public/create-checkout',
+  path: '/api/public/create-checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/collection': typeof CollectionRoute
   '/contact': typeof ContactRoute
+  '/payment-canceled': typeof PaymentCanceledRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/api/public/create-checkout': typeof ApiPublicCreateCheckoutRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/collection': typeof CollectionRoute
   '/contact': typeof ContactRoute
+  '/payment-canceled': typeof PaymentCanceledRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/api/public/create-checkout': typeof ApiPublicCreateCheckoutRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/collection': typeof CollectionRoute
   '/contact': typeof ContactRoute
+  '/payment-canceled': typeof PaymentCanceledRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/api/public/create-checkout': typeof ApiPublicCreateCheckoutRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/collection' | '/contact'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/collection'
+    | '/contact'
+    | '/payment-canceled'
+    | '/payment-success'
+    | '/api/public/create-checkout'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/collection' | '/contact'
-  id: '__root__' | '/' | '/about' | '/collection' | '/contact'
+  to:
+    | '/'
+    | '/about'
+    | '/collection'
+    | '/contact'
+    | '/payment-canceled'
+    | '/payment-success'
+    | '/api/public/create-checkout'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/collection'
+    | '/contact'
+    | '/payment-canceled'
+    | '/payment-success'
+    | '/api/public/create-checkout'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CollectionRoute: typeof CollectionRoute
   ContactRoute: typeof ContactRoute
+  PaymentCanceledRoute: typeof PaymentCanceledRoute
+  PaymentSuccessRoute: typeof PaymentSuccessRoute
+  ApiPublicCreateCheckoutRoute: typeof ApiPublicCreateCheckoutRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/payment-canceled': {
+      id: '/payment-canceled'
+      path: '/payment-canceled'
+      fullPath: '/payment-canceled'
+      preLoaderRoute: typeof PaymentCanceledRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment-success': {
+      id: '/payment-success'
+      path: '/payment-success'
+      fullPath: '/payment-success'
+      preLoaderRoute: typeof PaymentSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/create-checkout': {
+      id: '/api/public/create-checkout'
+      path: '/api/public/create-checkout'
+      fullPath: '/api/public/create-checkout'
+      preLoaderRoute: typeof ApiPublicCreateCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CollectionRoute: CollectionRoute,
   ContactRoute: ContactRoute,
+  PaymentCanceledRoute: PaymentCanceledRoute,
+  PaymentSuccessRoute: PaymentSuccessRoute,
+  ApiPublicCreateCheckoutRoute: ApiPublicCreateCheckoutRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
