@@ -2,11 +2,11 @@
 
 ## Stripe checkout (in progress)
 - [x] Connect user's own Stripe account (key saved)
-- [ ] Install stripe package + build checkout server route (`/api/public/create-checkout`)
-- [ ] Add Buy buttons on book cards (render only when a Stripe price ID exists)
-- [ ] Add payment-success and payment-canceled pages
-- [ ] Verify: typecheck, build log, API rejects bad input, pages render
-- [ ] Commit
+- [x] Install stripe package + build checkout server route (`/api/public/create-checkout`)
+- [x] Add Buy buttons on book cards (render only when a Stripe price ID exists)
+- [x] Add payment-success and payment-canceled pages
+- [x] Verify: typecheck, build log, API rejects bad input, pages render
+- [x] Commit
 
 ## Waiting on the user
 - Real book titles, descriptions, prices (current six are placeholders) → then create Stripe products/prices and fill `stripePriceId` in `src/lib/books.ts`
